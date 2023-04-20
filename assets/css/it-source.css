@@ -1507,7 +1507,7 @@ select:visited {
 .it-up-form-select:before {
   top: 45px;
   right: 20px;
-  content: "";
+  content: "";
   font-weight: 900;
   position: absolute;
   font-family: "Font Awesome 5 Free";
