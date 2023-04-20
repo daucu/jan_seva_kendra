@@ -493,13 +493,13 @@ select:visited {
 }
 .it-header-up-sticky .it-header-up-top {
   display: none;
-}
+} 
 .mobile_menu_content {
   top: 0px;
   bottom: 0;
   right: -350px;
   height: 100vh;
-  z-index: 101;
+  z-index: 100;
   width: 280px;
   position: fixed;
   overflow-y: scroll;
@@ -554,7 +554,7 @@ select:visited {
 }
 
 .it-up-mobile_menu_wrap.it-up-mobile_menu_on .mobile_menu_content {
-  right: 0px;
+  right: 0px; 
   transition: all 0.7s cubic-bezier(0.9, 0.03, 0, 0.96) 0.4s;
 }
 
@@ -2192,11 +2192,12 @@ select:visited {
     background:#fff;
     padding: 3px;
     position: fixed;
-    bottom: 0;
-    z-index:999;
+    /* bottom: 0; */
+    z-index:5;
     left: 0;
-    width: 100%;
-    top: inherit;
+    top:200px;
+    width: 20%;
+    /* top: inherit; */
     border-radius: 0px;
     margin: auto;
     display: block;
@@ -2212,7 +2213,7 @@ select:visited {
     background: #fff;
     border-radius: 5px;
 }
-.right-icons a i.fa-whatsapp {
+/* .right-icons a i.fa-whatsapp {
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -2221,9 +2222,9 @@ select:visited {
     color: #12b619;
     font-weight: bold;
     background: #ffffff;
-}
+} */
 
-.right-icons a i.fa-phone {
+/* .right-icons a i.fa-phone {
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -2232,7 +2233,7 @@ select:visited {
     color: #020031;
     font-weight: bold;
     background:#fff;
-}
+} */
 .whats {
     background: #12b619;
     float: left;
