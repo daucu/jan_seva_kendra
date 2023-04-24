@@ -321,7 +321,7 @@
 				<div class="row" id="service_cards">
 
 
-					<div class="col-lg-4 col-md-6">
+					<!-- <div class="col-lg-4 col-md-6">
 						<div class="it-up-featured-innerbox text-center ">
 							<div class="w-full">
 								<img src="assets/img/Pan_Card_Image.jpg" alt="">
@@ -389,7 +389,7 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> -->
 					<!-- <div class="col-lg-4 col-md-6">
 						<div class="it-up-featured-innerbox text-center relative">
 							<div class="w-[40px] h-[40px] absolute top-1 right-1">
@@ -715,42 +715,57 @@
 	// }
 
 
-	// window.onload = function () {
-	// 	get_all()
-	// }
+	window.onload = function () {
+		get_all()
+	}
 
-	// function get_all() {
-	// 	axios.get('https://jsk-backend-a4grml.dauqu.host/api/service')
-	// 		.then(function (response) {
-	// 			console.log(response.data.services);
-	// 			var abc = " ";
-	// 			response.data.services.forEach(function (data) {
-	// 				abc += `<div class="col-lg-4 col-md-6" id=${data._id}>
-	// 					<div class="it-up-featured-innerbox text-center relative ">
-	// 						<div class="w-[40px] h-[40px] absolute top-1 right-1">
-	// 							<a href="https://wa.me/+91${data.serv_number}/?text=">
-	// 								<div><img src="assets/img/whatsapp.png" alt=""></div>
-	// 							</a>
-	// 						</div>
-	// 						<div class="it-up-featured-icon ">
-	// 							<img class=""  src="${data.image}" alt="">
-	// 						</div>
-	// 						<div class="it-up-featured-text headline-1 pera-content">
-	// 							<h3><a href="#">${data.serv_name}</a></h3>
-	// 							<h3 onclick="showPopUp(event, '${data.description}')" class="cursor-pointer" style="color:brown">More info</h3>
-	// 						</div>
-	// 					</div>
-	// 				</div> `;
+function sendData(id){
+	console.log(id)
+	window.location.href= `know_more.html?id=${id}`
 
-	// 			});
-	// 			var notice_cards = document.getElementById('service_cards');
-	// 			// console.log(abc)
-	// 			notice_cards.innerHTML = abc;
-	// 		})
-	// 		.catch(function (error) {
-	// 			console.log(error);
-	// 		})
-	// }
+}
+
+	function get_all() {
+		axios.get('https://jsk-backend-a4grml.dauqu.host/api/service')
+			.then(function (response) {
+				console.log(response.data.services);
+				// window.location.href= `know_more.html?id=${response.data._id}`
+				var abc = " ";
+				response.data.services.forEach(function (data) {
+					// console.log(data._id)
+					abc += `	<div class="col-lg-4 col-md-6" id=${data._id}>
+						<div class="it-up-featured-innerbox text-center ">
+							<div class="w-full ">
+								<img class="min-h-[200px]" src=${data.image} alt="">
+							</div>
+							<div class="it-up-featured-text headline-1 pera-content">
+
+								<h3><a href="#">${data.serv_name}</a></h3>
+								<div class="flex flex-wrap justify-between  items-stretch">
+									<div class="bg-[#09B0C2] text-white mt-[10px] h-[36px] flex justify-center  p-[5px] w-full sm:w-[45%]" id=${data._id} >
+										<button onclick="sendData('${data._id}')" >
+											<h3  class="cursor-pointer text-white p-0">Know more</h3>
+										</button>
+									</div>
+									<div class="w-full sm:w-[45%] mt-[10px] h-[36px] flex justify-center items-center bg-[#29A71A]">
+										<a href="https://wa.me/+919745584577/?text=">
+											<div><img class="w-[30px] h-[30px]"  src="assets/img/whatsapp.png" alt=""></div>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div> `;
+
+				});
+				var notice_cards = document.getElementById('service_cards');
+				// console.log(abc)
+				notice_cards.innerHTML = abc;
+			})
+			.catch(function (error) {
+				console.log(error);
+			})
+	}
 
 
 </script>
