@@ -816,7 +816,7 @@ select:visited {
   padding-bottom: 30px;
 }
 .it-up-about-text .it-up-section-title p {
-  max-width: 550px;
+  /* max-width: 550px; */
 }
 
 .it-up-about-feature {
@@ -1422,7 +1422,7 @@ select:visited {
 /*----------------------------------------------------*/
 .it-up-contact-section {
   z-index: 1;
-  padding: 100px 0px;
+  padding: 35px 0px;
   background-color: #95c7aa;
 }
 .it-up-contact-section .it-up-section-title-2 {
